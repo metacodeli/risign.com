@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Your License Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, rgba(0, 0, 30, 0.8), rgba(0, 50, 100, 0.8));
+      z-index: 0;
+      animation: fadeOverlay 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeOverlay {
+      0% { background: rgba(0, 0, 30, 0.8); }
+      100% { background: rgba(0, 50, 100, 0.85); }
+    }
+
+    .container {
+      z-index: 1;
+      text-align: center;
+      max-width: 1100px;
+      padding: 20px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .quote, .keys-info {
+      font-size: 16px;
+      font-style: italic;
+      color: #d0eaff;
+      margin: 10px auto 30px auto;
+      max-width: 700px;
+    }
+
+    .keys-info {
+      font-style: normal;
+      color: #ffffff;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 2px solid #00ccff;
+      padding: 20px;
+      margin: 15px;
+      border-radius: 15px;
+      display: inline-block;
+      width: 280px;
+      transition: transform 0.3s, border-color 0.5s;
+      backdrop-filter: blur(8px);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      border-color: #00ffaa;
+    }
+
+    .card h2 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #ddddff;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .card a button {
+      padding: 10px 20px;
+      background-color: #00ccff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .card a button:hover {
+      background-color: #0099cc;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #00c3ff;
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      z-index: 2;
+      transition: background-color 0.3s ease;
+      animation: fadeInBtn 1.5s ease-out;
+    }
+
+    .back-button:hover {
+      background-color: #007bb5;
+    }
+
+    @keyframes fadeInBtn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- Back button -->
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+
+  <div class="container">
+    <h1>Choose Your License Plan</h1>
+
+    <div class="quote">
+      "Robots don't sleep. They execute with precision, speed, and consistency — just like your trades should."
+    </div>
+
+    <div class="keys-info">
+      Serial keys are the silent brain behind every trading robot. <br>
+      They unlock core functionality and validate trusted operation.<br>
+      Without them, automation breaks — with them, execution becomes seamless and secure.
+    </div>
+
+    <div class="card">
+      <h2>Installment License</h2>
+      <p>Price: R520 (~$28)</p>
+      <a href="sec.html.html"><button>Buy</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Monthly License</h2>
+      <p>Price: R200 (~$11)</p>
+      <a href="sec.html.html"><button>Buy</button></a>
+    </div>
+
+    <div class="card">
+      <h2>Chat Wall Access</h2>
+      <p>Price: R150 (~$8)</p>
+      <a href="sec.html.html"><button>Buy</button></a>
+    </div>
+  </div>
+</body>
+</html>

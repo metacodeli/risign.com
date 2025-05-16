@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Validation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #0f2027;
+      color: #fff;
+      animation: fadeIn 1.2s ease-in;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      filter: brightness(0.6);
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1e3c72;
+      margin-bottom: 30px;
+    }
+
+    p, ul {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .payment-section {
+      background: #e8f0fe;
+      border-left: 5px solid #007BFF;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .payment-section h3 {
+      color: #1e3c72;
+      margin-top: 0;
+    }
+
+    .price-box {
+      background: #d1ecf1;
+      border-left: 5px solid #17a2b8;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .price-box strong {
+      color: #0c5460;
+    }
+
+    a.whatsapp-link {
+      display: inline-block;
+      background-color: #25D366;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    a.whatsapp-link:hover {
+      background-color: #1ebe57;
+    }
+
+    a.back-link {
+      text-align: center;
+      display: block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #1e3c72;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px;
+        margin: 40px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- House Background -->
+<div class="background"></div>
+
+<!-- Main Content -->
+<div class="form-container">
+  <h2>Payment Validation</h2>
+
+  <!-- Pricing Information -->
+  <div class="price-box">
+    <p><strong>Validation Key:</strong> R520 once-off (≈ $28)</p>
+    <p><strong>Monthly Maintenance Fee:</strong> R200/month (≈ $11/month)</p>
+    <p>This covers activation, automation, and secure system operations.</p>
+  </div>
+
+  <!-- Why Validation Key is Needed -->
+  <div class="payment-section">
+    <h3>🔑 Why You Need a Validation Key</h3>
+    <p>
+      The <strong>Validation Key</strong> is a one-time activation passcode that connects your custom-built trading robot to our automated system. Without this key, your robot cannot operate or initiate trades.
+    </p>
+    <p>
+      It ensures your robot performs smoothly, securely, and in full alignment with your selected strategy. It also allows us to manage and monitor your setup through our intelligent infrastructure and provide monthly updates or support.
+    </p>
+  </div>
+
+  <!-- FNB Payment -->
+  <div class="payment-section">
+    <h3>💳 FNB Payment Details:</h3>
+    <ul>
+      <li><strong>Account Name:</strong> META BOT</li>
+      <li><strong>Account Number:</strong> 63088325923</li>
+      <li><strong>Bank:</strong> First National Bank</li>
+      <li><strong>Branch Code:</strong> 250655</li>
+      <li><strong>Account Type:</strong> Cheque</li>
+    </ul>
+  </div>
+
+  <!-- WhatsApp Proof -->
+  <div class="payment-section">
+    <h3>📲 Send Proof via WhatsApp AND get validation key:</h3>
+    <p>After payment, send your proof to our WhatsApp line to receive your validation key and activate your robot.</p>
+    <p><a class="whatsapp-link" href="https://wa.me/c/27661820141" target="_blank">Send Proof on WhatsApp</a></p>
+  </div>
+
+  <!-- Back -->
+  <a class="back-link" href="index.html">← Back to Robot Form</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Validation Key</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #0d0f1a;
+      color: #fff;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      filter: brightness(0.6);
+      animation: backgroundPulse 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes backgroundPulse {
+      0% { filter: brightness(0.6); }
+      100% { filter: brightness(0.8); }
+    }
+
+    .form-container {
+      background: rgba(0, 0, 0, 0.75);
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #00ffe5;
+      text-shadow: 0 0 8px #00ffe5;
+    }
+
+    label {
+      margin-top: 15px;
+      display: block;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #555;
+      border-radius: 6px;
+      background-color: #1a1a2e;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    input:focus {
+      border-color: #00ffe5;
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+      outline: none;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #00ffe5;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #00bfa6;
+      transform: scale(1.02);
+    }
+
+    .buy-validation-button {
+      background-color: #ff5722;
+      margin-top: 20px;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .buy-validation-button:hover {
+      background-color: #e64a19;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px;
+        margin: 30px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background Image -->
+<div class="background"></div>
+
+<!-- Form Container -->
+<div class="form-container">
+  <h2>Request Validation Key</h2>
+  <form id="validationForm" action="https://formspree.io/f/manoaokk" method="POST">
+
+    <label for="clientName">Your Name</label>
+    <input type="text" id="clientName" name="clientName" required>
+
+    <label for="robotName">Robot Name</label>
+    <input type="text" id="robotName" name="robotName" required>
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="whatsappNumber">WhatsApp Number</label>
+    <input type="text" id="whatsappNumber" name="whatsappNumber" required>
+
+    <label for="secretCode">Enter Secret Passcode</label>
+    <input type="text" id="secretCode" name="secretCode" placeholder="You will receive this after purchase Validation KEY" required>
+    <div id="error" class="error-message">Invalid passcode. Please enter a valid code.</div>
+
+    <div class="note">
+      <p><strong>Why is the Validation Key Important?</strong></p>
+      <p>The validation key is essential for activating your trading robot. Without it, the robot will not function as intended. The validation ensures you have permission to use the bot and access its premium features.</p>
+    </div>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://formspree.io/f/manoaokk">
+
+    <button type="submit">Submit Request</button>
+
+    <a href="validation key.html">
+      <button class="buy-validation-button" type="button">
+        Buy Validation Key
+      </button>
+    </a>
+  </form>
+
+  <div class="note">
+    <p>Once you've filled the form, you can either submit the request or click on "Buy Validation Key" to make your purchase.</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById("validationForm").addEventListener("submit", function(event) {
+    const allowedCodes = ["20T21", "34M30", "7Y45"];
+    const codeInput = document.getElementById("secretCode").value.trim();
+    const errorDiv = document.getElementById("error");
+
+    if (!allowedCodes.includes(codeInput)) {
+      event.preventDefault();
+      errorDiv.style.display = "block";
+    } else {
+      errorDiv.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>

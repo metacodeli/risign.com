@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome - RoboLicense</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .welcome-page {
+      background: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center/cover;
+      position: relative;
+      height: 100vh;
+      color: white;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .welcome-heading {
+      font-size: 4em;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 10px #000;
+    }
+
+    .quote {
+      font-size: 1.5em;
+      max-width: 700px;
+      margin-bottom: 40px;
+      line-height: 1.4;
+      text-shadow: 1px 1px 8px #000;
+    }
+
+    .continue-button {
+      background-color: #00ffcc;
+      color: #000;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.1s ease;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    .continue-button:hover {
+      background-color: #00cc99;
+      box-shadow: 0 0 15px #00cc99;
+    }
+  </style>
+</head>
+<body class="welcome-page">
+  <div class="overlay">
+    <h1 class="welcome-heading">Welcome</h1>
+    <p class="quote">"In a world of automation, security begins with a key."</p>
+    <a href="secondd3bots.html" class="continue-button">Continue</a>
+  </div>
+</body>
+</html>

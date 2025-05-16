@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Your Trading Robot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #0d0f1a;
+      color: #fff;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      filter: brightness(0.6);
+      animation: backgroundPulse 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes backgroundPulse {
+      0% { filter: brightness(0.6); }
+      100% { filter: brightness(0.8); }
+    }
+
+    .form-container {
+      background: rgba(0, 0, 0, 0.75);
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #00ffe5;
+      text-shadow: 0 0 8px #00ffe5;
+    }
+
+    label {
+      margin-top: 15px;
+      display: block;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #555;
+      border-radius: 6px;
+      background-color: #1a1a2e;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #00ffe5;
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #00ffe5;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #00bfa6;
+      transform: scale(1.02);
+    }
+
+    .get-key-button {
+      background-color: #14ffec;
+      margin-top: 30px;
+    }
+
+    .get-key-button:hover {
+      background-color: #0faba0;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    .whatsapp-button {
+      background-color: #25D366;
+      margin-top: 20px;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1ebc59;
+    }
+
+    /* Validation Key Button Below Submit Form */
+    .validation-key-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #ff5722;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .validation-key-button:hover {
+      background-color: #e64a19;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px;
+        margin: 30px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background Image -->
+<div class="background"></div>
+
+<!-- Form Container -->
+<div class="form-container">
+  <h2>Create Your Trading Robot</h2>
+  <form id="robotForm" action="https://formspree.io/f/manoaokk" method="POST">
+
+    <label for="platform">Select Platform</label>
+    <select id="platform" name="platform" required>
+      <option value="">-- Choose Platform --</option>
+      <option value="mt4">MetaTrader 4 (MT4)</option>
+      <option value="mt5">MetaTrader 5 (MT5)</option>
+    </select>
+
+    <label for="strategy">Select Strategy</label>
+    <select id="strategy" name="strategy" required>
+      <option value="">-- Choose Strategy --</option>
+      <option value="rsi">RSI Strategy</option>
+      <option value="moving_average">Moving Average</option>
+      <option value="fibonacci">Fibonacci</option>
+      <option value="bollinger_bands">Bollinger Bands</option>
+    </select>
+
+    <label for="mode">Select Mode</label>
+    <select id="mode" name="mode" required>
+      <option value="">-- Choose Mode --</option>
+      <option value="aggressive">Aggressive</option>
+      <option value="normal">Normal</option>
+    </select>
+
+    <label for="botType">Bot Trading Style</label>
+    <select id="botType" name="botType" required>
+      <option value="">-- Choose Bot Type --</option>
+      <option value="swing">Swing Trade Bot</option>
+      <option value="scalping">Scalping Bot</option>
+    </select>
+
+    <label for="useSL">Use Stop Loss?</label>
+    <select id="useSL" name="useSL">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <label for="useTP">Use Take Profit?</label>
+    <select id="useTP" name="useTP">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <label for="timeframe">Trading Timeframe</label>
+    <select id="timeframe" name="timeframe" required>
+      <option value="">-- Choose Timeframe --</option>
+      <option value="1min">1 Minute</option>
+      <option value="5min">5 Minutes</option>
+      <option value="15min">15 Minutes</option>
+      <option value="1hr">1 Hour</option>
+      <option value="4hr">4 Hours</option>
+      <option value="1day">1 Day</option>
+    </select>
+
+    <label for="market">Market Type</label>
+    <select id="market" name="market" required>
+      <option value="">-- Choose Market --</option>
+      <option value="forex">Forex</option>
+      <option value="crypto">Cryptocurrency</option>
+      <option value="stocks">Stocks</option>
+      <option value="commodities">Commodities</option>
+    </select>
+
+    <label for="session">Trading Session</label>
+    <select id="session" name="session" required>
+      <option value="">-- Choose Session --</option>
+      <option value="london">London</option>
+      <option value="new_york">New York</option>
+      <option value="asian">Asian</option>
+      <option value="247">24/7</option>
+    </select>
+
+    <label for="candlestickColors">Candlestick Colors</label>
+    <select id="candlestickColors" name="candlestickColors" required>
+      <option value="">-- Choose Color(s) --</option>
+      <option value="blue_white">Blue and White</option>
+      <option value="red">Red</option>
+      <option value="yellow">Yellow</option>
+      <option value="red_blue">Red and Blue</option>
+      <option value="blue">Blue</option>
+      <option value="lime_green">Lime Green</option>
+    </select>
+
+    <label for="accountNumbers">Enter Your Five Trading Account Numbers (Demo or Real - Any Broker)</label>
+    <textarea id="accountNumbers" name="accountNumbers" rows="4" required placeholder="Example: 12345678, 23456789, 34567890, 45678901, 56789012"></textarea>
+
+    <label for="passcode">Enter Your Secret Validation Code</label>
+    <input type="text" id="passcode" name="passcode" required placeholder="You receive this after VALIDATION KEY purchase">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://formspree.io/f/manoaokk">
+
+    <button type="submit">Submit Form</button>
+
+    <!-- Validation Key Button under Submit Form -->
+    <button class="validation-key-button" onclick="window.location.href='R.html';">
+      Get Validation Key
+    </button>
+  </form>
+</div>
+
+</body>
+</html>
